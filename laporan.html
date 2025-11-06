@@ -321,8 +321,8 @@
       (async function init() {
         try {
           const [kelahiran, kematian] = await Promise.all([
-            fetchSheet("Data Kelahiran"),
-            fetchSheet("Data Kematian"),
+            fetchSheet("Sheet2"),
+            fetchSheet("Sheet1"),
           ]);
 
           // Warna header disesuaikan

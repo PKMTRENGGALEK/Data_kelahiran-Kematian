@@ -78,6 +78,15 @@
 
   <body>
     <div class="container py-5">
+      <div class="mb-3 text-center">
+        <img
+          src="https://pkmtrenggalek.github.io/SIP/assets/pkm.png"
+          alt="Logo Puskesmas Trenggalek"
+          width="100"
+          class="mb-3"
+        />
+        <!-- <h5 class="text-muted mb-4">Puskesmas Trenggalek</h5> -->
+      </div>
       <h3 class="mb-4 text-center fw-bold">
         <i class="fa-solid fa-users me-2 text-success"></i>Form Data Penduduk
       </h3>
@@ -115,202 +124,480 @@
 
       <!-- Tab content -->
       <div class="tab-content">
-        <!-- === FORM KEMATIAN === -->
+        <!-- === FORM KEMATIAN (Tampilan Grid Rapi) === -->
         <div class="tab-pane fade show active" id="kematian">
-          <div class="card">
-            <h5 class="mb-3 fw-semibold text-white">
+          <div class="card p-4 shadow-sm border-0">
+            <h5 class="mb-3 fw-semibold text-white bg-success p-2 rounded">
               <i class="fa-solid fa-tombstone me-2"></i>Data Kematian
             </h5>
 
             <form id="formKematian">
-              <div class="row g-3">
-                <div class="col-md-4">
-                  <label class="form-label">NIK</label>
-                  <input
-                    type="text"
-                    id="nik"
-                    class="form-control"
-                    maxlength="16"
-                    required
-                  />
+              <div class="container-fluid">
+                <!-- NIK -->
+                <div class="row mb-3 align-items-center">
+                  <label for="nik" class="col-md-2 col-form-label fw-semibold"
+                    >NIK *</label
+                  >
+                  <div class="col-md-4">
+                    <input
+                      type="text"
+                      id="nik"
+                      class="form-control"
+                      maxlength="16"
+                      required
+                    />
+                  </div>
                 </div>
-                <div class="col-md-8">
-                  <label class="form-label">Nama Lengkap</label>
-                  <input
-                    type="text"
-                    id="nama"
-                    class="form-control"
-                    placeholder="Nama almarhum/almarhumah"
-                    required
-                  />
-                </div>
-                <div class="col-md-12">
-                  <label class="form-label">Alamat Lengkap</label>
-                  <textarea
-                    id="alamat_lengkap"
-                    class="form-control"
-                    rows="2"
-                    required
-                  ></textarea>
-                </div>
-                <div class="col-md-2">
-                  <label class="form-label">Desa / Kelurahan</label>
-                  <select class="form-select" id="desa">
-                    <option value="">--Pilih--</option>
-                    <option value="Ngantru">Ngantru</option>
-                    <option value="Tamanan">Tamanan</option>
-                    <option value="Sumber Gedong">Sumber Gedong</option>
-                    <option value="Kelutan">Kelutan</option>
-                    <option value="Sambirejo">Sambirejo</option>
-                    <option value="Karangsoko">Karangsoko</option>
-                  </select>
-                </div>
-                <div class="col-md-2">
-                  <label class="form-label">Umur</label>
-                  <input
-                    type="number"
-                    id="umur"
-                    class="form-control"
-                    min="0"
-                    max="120"
-                    required
-                  />
-                </div>
-                <div class="col-md-2">
-                  <label class="form-label">Jenis Kelamin</label>
-                  <select id="jk" class="form-select" required>
-                    <option value="">-- Pilih --</option>
-                    <option value="L">Laki-laki</option>
-                    <option value="P">Perempuan</option>
-                  </select>
-                </div>
-                <div class="col-md-3">
-                  <label class="form-label">Tanggal Meninggal</label>
-                  <input
-                    type="text"
-                    id="tgl_meninggal"
-                    class="form-control"
-                    required
-                  />
-                </div>
-                <div class="col-md-3">
-                  <label class="form-label">Tempat Meninggal</label>
-                  <input
-                    type="text"
-                    id="tempat_meninggal"
-                    class="form-control"
-                    placeholder="Misal: RSUD Trenggalek"
-                    required
-                  />
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Diagnosa</label>
-                  <input
-                    type="text"
-                    id="diagnosa"
-                    class="form-control"
-                    placeholder="Masukkan diagnosa penyebab kematian"
-                    required
-                  />
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Kode ICD 10</label>
-                  <input
-                    type="text"
-                    id="kode_icd_10"
-                    class="form-control"
-                    placeholder="Contoh: A41.9"
-                  />
-                </div>
-              </div>
 
-              <div class="mt-4 text-end">
-                <button
-                  type="submit"
-                  class="btn btn-light fw-bold text-success shadow-sm"
-                >
-                  <i class="fa-solid fa-paper-plane me-1"></i>Simpan Data
-                </button>
+                <!-- Nama Lengkap -->
+                <div class="row mb-3 align-items-center">
+                  <label for="nama" class="col-md-2 col-form-label fw-semibold"
+                    >Nama Lengkap *</label
+                  >
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      id="nama"
+                      class="form-control"
+                      placeholder="Nama almarhum/almarhumah"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <!-- Alamat -->
+                <div class="row mb-3">
+                  <label
+                    for="alamat_lengkap"
+                    class="col-md-2 col-form-label fw-semibold"
+                    >Alamat Lengkap *</label
+                  >
+                  <div class="col-md-8">
+                    <textarea
+                      id="alamat_lengkap"
+                      class="form-control"
+                      rows="2"
+                      required
+                    ></textarea>
+                  </div>
+                </div>
+
+                <!-- Desa, Umur, Jenis Kelamin -->
+                <div class="row mb-3">
+                  <label class="col-md-2 col-form-label fw-semibold"
+                    >Desa / Kelurahan *</label
+                  >
+                  <div class="col-md-2">
+                    <select class="form-select" id="desa" required>
+                      <option value="">--Pilih--</option>
+                      <option value="Ngantru">Ngantru</option>
+                      <option value="Tamanan">Tamanan</option>
+                      <option value="Sumber Gedong">Sumber Gedong</option>
+                      <option value="Kelutan">Kelutan</option>
+                      <option value="Sambirejo">Sambirejo</option>
+                      <option value="Karangsoko">Karangsoko</option>
+                    </select>
+                  </div>
+
+                  <label class="col-md-1 col-form-label fw-semibold"
+                    >Umur *</label
+                  >
+                  <div class="col-md-1">
+                    <input
+                      type="number"
+                      id="umur"
+                      class="form-control"
+                      min="0"
+                      max="120"
+                      required
+                    />
+                  </div>
+
+                  <label class="col-md-2 col-form-label fw-semibold"
+                    >Jenis Kelamin *</label
+                  >
+                  <div class="col-md-2">
+                    <select id="jk" class="form-select" required>
+                      <option value="">-- Pilih --</option>
+                      <option value="L">Laki-laki</option>
+                      <option value="P">Perempuan</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Tanggal & Tempat Meninggal -->
+                <div class="row mb-3">
+                  <label class="col-md-2 col-form-label fw-semibold"
+                    >Tanggal Meninggal *</label
+                  >
+                  <div class="col-md-3">
+                    <input
+                      type="date"
+                      id="tgl_meninggal"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+
+                  <label class="col-md-2 col-form-label fw-semibold"
+                    >Tempat Meninggal *</label
+                  >
+                  <div class="col-md-3">
+                    <input
+                      type="text"
+                      id="tempat_meninggal"
+                      class="form-control"
+                      placeholder="Misal: RSUD Trenggalek"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <!-- Diagnosa -->
+                <div class="row mb-3">
+                  <label class="col-md-2 col-form-label fw-semibold"
+                    >Penyebab Kematian *</label
+                  >
+                  <div class="col-md-8">
+                    <textarea
+                      id="diagnosa"
+                      class="form-control"
+                      rows="2"
+                      required
+                    ></textarea>
+                  </div>
+                </div>
+
+                <!-- Tombol Simpan -->
+                <div class="row">
+                  <div class="col-md-10 text-end">
+                    <button
+                      type="submit"
+                      class="btn btn-success fw-bold shadow-sm px-4"
+                    >
+                      <i class="fa-solid fa-paper-plane me-1"></i> Simpan Data
+                    </button>
+                  </div>
+                </div>
               </div>
             </form>
           </div>
         </div>
 
-        <!-- === FORM KELAHIRAN === -->
+        <!-- === FORM KELAHIRAN (Tampilan Grid Rapi) === -->
+        <!-- === FORM KELAHIRAN (Versi Rapi & Profesional) === -->
         <div class="tab-pane fade" id="kelahiran">
           <div
-            class="card"
-            style="background: linear-gradient(135deg, #38bdf8, #60a5fa)"
+            class="card p-4 shadow-sm border-0"
+            style="background: linear-gradient(135deg, #474745, #90be46be)"
           >
-            <h5 class="mb-3 fw-semibold text-white">
+            <h5 class="mb-4 fw-semibold text-white border-bottom pb-2">
               <i class="fa-solid fa-baby me-2"></i>Data Kelahiran
             </h5>
 
             <form id="formKelahiran">
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <label class="form-label">NIK Bayi</label>
-                  <input
-                    type="text"
-                    id="nik_bayi"
-                    class="form-control"
-                    required
-                  />
+              <div class="container-fluid">
+                <!-- NIK Bayi -->
+                <div class="row mb-3 align-items-center">
+                  <label
+                    for="nik_bayi"
+                    class="col-md-2 col-form-label fw-semibold text-white"
+                  >
+                    NIK Bayi
+                  </label>
+                  <div class="col-md-4">
+                    <input
+                      type="text"
+                      id="nik_bayi"
+                      class="form-control"
+                      maxlength="16"
+                      required
+                    />
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <label class="form-label">Nama Bayi</label>
-                  <input
-                    type="text"
-                    id="nama_bayi"
-                    class="form-control"
-                    required
-                  />
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Nama Ibu</label>
-                  <input
-                    type="text"
-                    id="nama_ibu"
-                    class="form-control"
-                    required
-                  />
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Tanggal Lahir</label>
-                  <input
-                    type="text"
-                    id="tgl_lahir"
-                    class="form-control"
-                    required
-                  />
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Jenis Kelamin</label>
-                  <select id="jk_bayi" class="form-select" required>
-                    <option value="">-- Pilih --</option>
-                    <option value="L">Laki-laki</option>
-                    <option value="P">Perempuan</option>
-                  </select>
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Tempat Lahir</label>
-                  <input
-                    type="text"
-                    id="tempat_lahir"
-                    class="form-control"
-                    placeholder="Misal: RSUD Trenggalek"
-                    required
-                  />
-                </div>
-              </div>
 
-              <div class="mt-4 text-end">
-                <button
-                  type="submit"
-                  class="btn btn-light fw-bold text-primary shadow-sm"
-                >
-                  <i class="fa-solid fa-paper-plane me-1"></i>Simpan Data
-                </button>
+                <!-- Nama Bayi -->
+                <div class="row mb-3 align-items-center">
+                  <label
+                    for="nama_bayi"
+                    class="col-md-2 col-form-label fw-semibold text-white"
+                  >
+                    Nama Bayi
+                  </label>
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      id="nama_bayi"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <!-- Jenis Kelamin -->
+                <div class="row mb-3 align-items-center">
+                  <label
+                    for="jk_bayi"
+                    class="col-md-2 col-form-label fw-semibold text-white"
+                  >
+                    Jenis Kelamin
+                  </label>
+                  <div class="col-md-3">
+                    <select id="jk_bayi" class="form-select" required>
+                      <option value="">-- Pilih --</option>
+                      <option value="L">Laki-laki</option>
+                      <option value="P">Perempuan</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Nama Ayah -->
+                <div class="row mb-3 align-items-center">
+                  <label
+                    for="nama_ayah"
+                    class="col-md-2 col-form-label fw-semibold text-white"
+                  >
+                    Nama Ayah
+                  </label>
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      id="nama_ayah"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <!-- Nama Ibu -->
+                <div class="row mb-3 align-items-center">
+                  <label
+                    for="nama_ibu"
+                    class="col-md-2 col-form-label fw-semibold text-white"
+                  >
+                    Nama Ibu
+                  </label>
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      id="nama_ibu"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <!-- Alamat -->
+                <div class="row mb-3 align-items-center">
+                  <label
+                    for="alamat"
+                    class="col-md-2 col-form-label fw-semibold text-white"
+                  >
+                    Alamat
+                  </label>
+                  <div class="col-md-6">
+                    <textarea
+                      id="alamat"
+                      class="form-control"
+                      rows="2"
+                      required
+                    ></textarea>
+                  </div>
+                </div>
+
+                <!-- RT / RW -->
+                <div class="row mb-3 align-items-center">
+                  <label
+                    for="RT"
+                    class="col-md-2 col-form-label fw-semibold text-white"
+                    >RT / RW</label
+                  >
+                  <div class="col-md-1">
+                    <input
+                      type="text"
+                      id="RT"
+                      class="form-control text-center"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-1">
+                    <input
+                      type="text"
+                      id="RW"
+                      class="form-control text-center"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <!-- Desa / Kelurahan -->
+                <div class="row mb-3 align-items-center">
+                  <label
+                    for="desa"
+                    class="col-md-2 col-form-label fw-semibold text-white"
+                  >
+                    Desa / Kelurahan
+                  </label>
+                  <div class="col-md-3">
+                    <select class="form-select" id="desa" required>
+                      <option value="">-- Pilih --</option>
+                      <option value="Ngantru">Ngantru</option>
+                      <option value="Tamanan">Tamanan</option>
+                      <option value="Sumber Gedong">Sumber Gedong</option>
+                      <option value="Kelutan">Kelutan</option>
+                      <option value="Sambirejo">Sambirejo</option>
+                      <option value="Karangsoko">Karangsoko</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Tanggal & Jam Lahir -->
+                <div class="row mb-3 align-items-center">
+                  <label
+                    for="tgl_lahir"
+                    class="col-md-2 col-form-label fw-semibold text-white"
+                  >
+                    Tanggal / Jam Lahir
+                  </label>
+                  <div class="col-md-2">
+                    <input
+                      type="date"
+                      id="tgl_lahir"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-2">
+                    <input
+                      type="time"
+                      id="jam_lahir"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <!-- Jenis Persalinan -->
+                <div class="row mb-3 align-items-center">
+                  <label
+                    for="jenis"
+                    class="col-md-2 col-form-label fw-semibold text-white"
+                  >
+                    Jenis Persalinan
+                  </label>
+                  <div class="col-md-4">
+                    <select class="form-select" id="jenis" required>
+                      <option value="">-- Pilih --</option>
+                      <option value="Normal">Normal</option>
+                      <option value="Spontan">Spontan</option>
+                      <option value="SC">SC</option>
+                      <option value="Drip">Drip</option>
+                      <option value="Vacum">Vacum</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Tempat Lahir -->
+                <div class="row mb-3 align-items-center">
+                  <label
+                    for="tempat_lahir"
+                    class="col-md-2 col-form-label fw-semibold text-white"
+                  >
+                    Tempat Lahir
+                  </label>
+                  <div class="col-md-4">
+                    <select class="form-select" id="tempat_lahir" required>
+                      <option value="">-- Pilih --</option>
+                      <option value="POLINDES">POLINDES</option>
+                      <option value="BPM">BPM</option>
+                      <option value="Puskesmas">Puskesmas</option>
+                      <option value="PONED">PONED</option>
+                      <option value="RSUD">RSUD</option>
+                      <option value="BPS">BPS</option>
+                      <option value="Lainnya">Lainnya</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Penolong Kelahiran -->
+                <div class="row mb-3 align-items-center">
+                  <label
+                    for="penolong"
+                    class="col-md-2 col-form-label fw-semibold text-white"
+                  >
+                    Penolong Kelahiran
+                  </label>
+                  <div class="col-md-4">
+                    <select class="form-select" id="penolong" required>
+                      <option value="">-- Pilih --</option>
+                      <option value="Bidan">Bidan</option>
+                      <option value="SPOG">SPOG</option>
+                      <option value="Lainnya">Lainnya</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Jenis Pendanaan, BB, TB -->
+                <div class="row mb-3 align-items-center">
+                  <label
+                    for="jenis_pendanaan"
+                    class="col-md-2 col-form-label fw-semibold text-white"
+                  >
+                    Jenis Pendanaan
+                  </label>
+                  <div class="col-md-2">
+                    <select class="form-select" id="jenis_pendanaan" required>
+                      <option value="">-- Pilih --</option>
+                      <option value="KIS">KIS</option>
+                      <option value="BPJS">BPJS</option>
+                      <option value="Bayar">Bayar</option>
+                      <option value="Jampersal">Jampersal</option>
+                      <option value="Lainnya">Lainnya</option>
+                    </select>
+                  </div>
+
+                  <label
+                    for="BB"
+                    class="col-md-2 col-form-label fw-semibold text-white"
+                  >
+                    Berat Badan (kg)
+                  </label>
+                  <div class="col-md-1">
+                    <input
+                      type="number"
+                      step="0.1"
+                      id="BB"
+                      class="form-control text-center"
+                    />
+                  </div>
+
+                  <label
+                    for="TB"
+                    class="col-md-2 col-form-label fw-semibold text-white"
+                  >
+                    Tinggi Badan (cm)
+                  </label>
+                  <div class="col-md-1">
+                    <input
+                      type="number"
+                      step="0.1"
+                      id="TB"
+                      class="form-control text-center"
+                    />
+                  </div>
+                </div>
+
+                <!-- Tombol Simpan -->
+                <div class="row mt-4">
+                  <div class="col-md-10 text-end">
+                    <button
+                      type="submit"
+                      class="btn btn-light fw-bold text-success shadow-sm px-4"
+                    >
+                      <i class="fa-solid fa-paper-plane me-1"></i> Simpan Data
+                    </button>
+                  </div>
+                </div>
               </div>
             </form>
           </div>
@@ -328,11 +615,12 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
+        // === Flatpickr setup ===
         flatpickr("#tgl_meninggal", { dateFormat: "Y-m-d" });
         flatpickr("#tgl_lahir", { dateFormat: "Y-m-d" });
 
         const SCRIPT_URL =
-          "https://script.google.com/macros/s/AKfycbwONhP_0zc5u3ThodgvX1ebDWOZWOgcVvn8Uy09LioGJAZYSTjDoFXw8d1kOpZrQ2CF2A/exec";
+          "https://script.google.com/macros/s/AKfycbwyu-78yUjES6fnZyi6nClaRjOmmqkUxhY9ZXsz9Xsa1D6pYkymHl6U1QfUXMnD7_dvwA/exec";
 
         // === FORM KEMATIAN ===
         document
@@ -356,13 +644,12 @@
               tgl_meninggal: tgl_meninggal.value,
               tempat_meninggal: tempat_meninggal.value,
               diagnosa: diagnosa.value,
-              kode_icd_10: kode_icd_10.value,
             };
 
             try {
               const res = await fetch(SCRIPT_URL, {
                 method: "POST",
-                body: JSON.stringify(payload),
+                body: JSON.stringify(payload), // tanpa headers agar tidak preflight
               });
               const data = await res.json();
               if (data.status === "success") {
@@ -385,6 +672,36 @@
           .getElementById("formKelahiran")
           .addEventListener("submit", async (e) => {
             e.preventDefault();
+
+            const nik_bayi = document.getElementById("nik_bayi").value.trim();
+            const nama_bayi = document.getElementById("nama_bayi").value.trim();
+            const jk_bayi = document.getElementById("jk_bayi").value;
+            const nama_ayah = document.getElementById("nama_ayah").value.trim();
+            const nama_ibu = document.getElementById("nama_ibu").value.trim();
+            const alamat = document.getElementById("alamat").value.trim();
+            const RT = document.getElementById("RT").value.trim();
+            const RW = document.getElementById("RW").value.trim();
+            const desa = document.getElementById("desa").value;
+            const tgl_lahir = document.getElementById("tgl_lahir").value;
+            const jam_lahir = document.getElementById("jam_lahir").value.trim();
+            const jenis = document.getElementById("jenis").value;
+            const tempat_lahir = document.getElementById("tempat_lahir").value;
+            const penolong =
+              document.querySelector("select#penolong")?.value || "";
+            const jenis_pendanaan =
+              document.querySelector("select#jenis_pendanaan")?.value || "";
+            const BB = document.getElementById("BB").value.trim();
+            const TB = document.getElementById("TB").value.trim();
+
+            if (!nik_bayi || !nama_bayi || !tgl_lahir || !jk_bayi) {
+              Swal.fire(
+                "Lengkapi Data!",
+                "Beberapa field penting masih kosong.",
+                "warning"
+              );
+              return;
+            }
+
             Swal.fire({
               title: "Mengirim Data Kelahiran...",
               allowOutsideClick: false,
@@ -393,12 +710,23 @@
 
             const payload = {
               action: "addKelahiran",
-              nik_bayi: nik_bayi.value,
-              nama_bayi: nama_bayi.value,
-              nama_ibu: nama_ibu.value,
-              tgl_lahir: tgl_lahir.value,
-              jk: jk_bayi.value,
-              tempat_lahir: tempat_lahir.value,
+              nik_bayi,
+              nama_bayi,
+              jk_bayi,
+              nama_ayah,
+              nama_ibu,
+              alamat,
+              RT,
+              RW,
+              desa,
+              tgl_lahir,
+              jam_lahir,
+              jenis,
+              tempat_lahir,
+              penolong,
+              jenis_pendanaan,
+              BB,
+              TB,
             };
 
             try {
@@ -407,16 +735,17 @@
                 body: JSON.stringify(payload),
               });
               const data = await res.json();
+
               if (data.status === "success") {
                 Swal.fire({
                   icon: "success",
                   title: "Berhasil!",
-                  text: "Data kelahiran tersimpan.",
+                  text: "Data kelahiran berhasil disimpan.",
                   timer: 2000,
                   showConfirmButton: false,
                 });
-                formKelahiran.reset();
-              } else throw new Error(data.message);
+                e.target.reset();
+              } else throw new Error(data.message || "Gagal menyimpan data!");
             } catch (err) {
               Swal.fire("Error", err.message, "error");
             }
@@ -425,4 +754,3 @@
     </script>
   </body>
 </html>
-
